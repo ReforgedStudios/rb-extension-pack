@@ -36,11 +36,11 @@ class SlackExtension(Extension):
     def initialize(self):
         """Initialize the extension hooks."""
         hooks = [
-            (review_request_closed, self.on_review_request_closed),
+            # (review_request_closed, self.on_review_request_closed),
             (review_request_published, self.on_review_request_published),
-            (review_request_reopened, self.on_review_request_reopened),
-            (review_published, self.on_review_published),
-            (reply_published, self.on_reply_published),
+            # (review_request_reopened, self.on_review_request_reopened),
+            # (review_published, self.on_review_published),
+            # (reply_published, self.on_reply_published),
         ]
 
         for signal, handler in hooks:
@@ -170,11 +170,11 @@ class SlackExtension(Extension):
                 'value': review_request_link,
                 'short': False,
             },
-            {
-                'title': 'By',
-                'value': user_link,
-                'short': True,
-            },
+            # {
+                # 'title': 'By',
+                # 'value': user_link,
+                # 'short': True,
+            # },
         ]
         text = 'Review Request Published: %s' % review_request_link
 
